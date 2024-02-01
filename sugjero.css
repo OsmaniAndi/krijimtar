@@ -1,0 +1,34 @@
+#nav {
+background-color: #562C2C;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#bottom {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#facebook, #instagram, #tiktok, #linkedin {
+    border: none;
+    background: none;
+}
+
+#email {
+    margin-top: 20px;
+    margin-bottom: -2px;
+}
+
+#line {
+    margin-top: 60px;
+    margin-bottom: -50px;
+    background-color: darkmagenta;
+    border-color: blueviolet;
+}
+
+#facebook:hover, #instagram:hover, #tiktok:hover, #linkedin:hover {
+    cursor: pointer;
+    opacity: 0.9;
+} 
