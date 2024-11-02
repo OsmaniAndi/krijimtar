@@ -9,7 +9,6 @@ arrow==1.2.3
 asgiref==3.8.1
 astroid==2.9.0
 astropy==5.0.5
-astropy-iers-data==2022.12.12
 async-lru==1.0.3
 atomicwrites==1.4.0
 attrs==21.4.0
