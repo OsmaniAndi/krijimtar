@@ -291,7 +291,6 @@ rpds-py @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/rpds-py_
 Rtree @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/rtree_1699565751755/work
 ruamel-yaml-conda @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/ruamel_yaml_1699543990032/work
 ruamel.yaml @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/ruamel.yaml_1699483184324/work
-s3fs @ file:///C:/b/abs_972cxni1lb/croot/s3fs_1714466090144/work
 scikit-image @ file:///C:/b/abs_c8fk8452if/croot/scikit-image_1718285241274/work
 scikit-learn @ file:///C:/b/abs_d6_krvz8aa/croot/scikit-learn_1714164798159/work
 scipy @ file:///C:/b/abs_efv75hqhju/croot/scipy_1717521501389/work/dist/scipy-1.13.1-cp312-cp312-win_amd64.whl#sha256=b29dba691773ea983857b31cad894f31623348583937b6f03783facfd7abc734
