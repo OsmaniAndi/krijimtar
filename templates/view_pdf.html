@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3477008708511938"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
     <title>View PDF - {{ book_name }}</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -26,12 +26,67 @@
 <body>
     <div class="container">
         <h1>Viewing: {{ book_name }}</h1>
-        <iframe class="pdf-viewer" src="{{ url_for('static', filename='pdf/' + book_name) }}" allowfullscreen></iframe>
+        <canvas id="pdf-canvas"></canvas>
+        <div class="pdf-controls">
+            <button class="btn btn-secondary" id="prev">Previous</button>
+            <button class="btn btn-secondary" id="next">Next</button>
+        </div>
         <br>
         <a class="btn btn-primary" href="{{ url_for('books') }}">Ktheu Pas</a>
     </div>
 
-    <!-- Bootstrap JS (optional, if you need JS features) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+    <script>
+        const url = "{{ url_for('static', filename='pdf/' + book_name) }}"; // Set the PDF URL
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.worker.min.js';
+
+        let pdfDoc = null,
+            currentPage = 1,
+            totalPages = 0;
+
+        // Load the PDF document
+        pdfjsLib.getDocument(url).promise.then(function (pdf) {
+            pdfDoc = pdf;
+            totalPages = pdf.numPages;
+            renderPage(currentPage);
+        });
+
+        // Render the PDF page
+        function renderPage(pageNum) {
+            pdfDoc.getPage(pageNum).then(function (page) {
+                const scale = 1.5; // Adjust the scale for the canvas
+                const viewport = page.getViewport({ scale: scale });
+                const canvas = document.getElementById('pdf-canvas');
+                const context = canvas.getContext('2d');
+
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+            });
+        }
+
+        // Next page button
+        document.getElementById('next').addEventListener('click', function () {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderPage(currentPage);
+            }
+        });
+
+        // Previous page button
+        document.getElementById('prev').addEventListener('click', function () {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage(currentPage);
+            }
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
