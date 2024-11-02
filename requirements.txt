@@ -8,3 +8,4 @@ MarkupSafe
 setuptools==75.1.0
 Werkzeug
 wheel==0.44.0
+gunicorn
