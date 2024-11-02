@@ -4,7 +4,6 @@ alabaster==0.7.12
 altair==4.2.0
 altgraph==0.17.4
 appdirs==1.4.4
-archspec==0.6.0
 argon2-cffi==21.3.0
 arrow==1.2.3
 asgiref==3.8.1
