@@ -1,10 +1,10 @@
-blinker @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/blinker_1699474692786/work
-click @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/click_1699473800648/work
-colorama @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/colorama_1699472650914/work
-Flask @ file:///C:/b/abs_f9w7doyu0h/croot/flask_1716545924884/work
-itsdangerous @ file:///C:/b/abs_c4vwgdr5yn/croot/itsdangerous_1716533399914/work
-Jinja2 @ file:///C:/b/abs_92fccttino/croot/jinja2_1716993447201/work
-MarkupSafe @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/markupsafe_1707425732791/work
+blinker
+click
+colorama
+Flask
+itsdangerous
+Jinja2
+MarkupSafe
 setuptools==75.1.0
-Werkzeug @ file:///C:/b/abs_8bittcw9jr/croot/werkzeug_1716533366070/work
+Werkzeug
 wheel==0.44.0
