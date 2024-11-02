@@ -1,0 +1,222 @@
+<head>
+    <title>Krijimtar</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='libra.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='krijimtar-logo.png')}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body style="background-color: #F2F3AE;">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" id="nav">
+        <a href="{{url_for('index')}}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img class="bi me-2" id='icon' width="100" height="100" src="{{url_for('static', filename='krijimtar.png')}}">
+        </a>
+  
+        <ul class="nav nav-pills align-items-center">
+          <li class="nav-item"><a href="{{url_for('index')}}" class="nav-link" aria-current="page" style="color: #F5DFBB;">Home</a></li>
+          <li class="nav-item"><a href="{{url_for('books')}}" class="nav-link active" style="background-color: #F5DFBB; color: #1D1A31;">Librat</a></li>
+          <li class="nav-item"><a href="{{url_for('suggest')}}" class="nav-link" id='last_button' style="color: #F5DFBB;">Sugjero</a></li>
+        </ul>
+    </header>
+
+    <h1 style="font-family: 'Kanit', sans-serif; margin-left: 40px;">Lexo Tani!</h1>
+
+    <div class="container text-center">
+        <div class="row">
+          <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+            <img src="{{url_for('static', filename='baba-i-pasur-baba-i-varfer.jpg')}}" width="200px">
+            <h2 style="margin-top: 20px;">Babai i Pasur Babai i Varfer</h2>
+            <p>Ky libër është vijim i vëllimit të parë bestseller absolut “Baba i pasur, baba i varfër”, ku kësaj radhe autorët sjellin këshillat që jep babai i pasur për paranë djalit të tij. Kësaj radhe jepen udhëzime për të arritur lirinë tuaj financiare.</p>
+            <button onclick="window.location.href=' {{ url_for('view_pdf', book_name='babai-i-pasur-babai-i-varfer.pdf') }}'" class="btn btn-light">ALB</button>
+            <button onclick="window.location.href=' {{ url_for('view_pdf', book_name='Rich-Dad-Poor-Dad-en.pdf') }}'" class="btn btn-light">ENG</button>
+          </div>
+          <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+            <img src="{{url_for('static', filename='good-vibes-good-life.jpg')}}" width="200px">
+            <h2 style="margin-top: 20px;">Good Vibes - Good Life</h2>
+            <p>Zbulo sesi dashuria per veten eshte celesi per te nxjerre ne pah madheshtine tende permes librit bestseller te momentit Good Vibes, Good life. BESTSELLER #1 I SUNDAY TIMES.</p>
+            <button onclick="window.location.href=' {{ url_for('view_pdf', book_name='good-vibes.pdf') }}'" class="btn btn-light">ALB</button>
+            <button onclick="window.location.href='{{ url_for('view_pdf', book_name='GoodVibesGoodLife-en.pdf') }}'" class="btn btn-light">ENG</button>
+          </div>
+          <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+            <img src="{{url_for('static', filename='mendo-per-gjera-te-medha-dhe-behu-i-madh.jpg')}}" width="200px">
+            <h2 style="margin-top: 20px;">Magjia e Mendimeve të Mëdha</h2>
+            <p>Ky libër nuk ofron premtime boshe por një program të menduar me shumë kujdes për të përfituar sa më shumë nga puna, jeta, martesa dhe komuniteti në të cilin jetoni. Ai ju rrëfen se nuk keni pse të jeni intelektual apo të keni lindur me talent për të pasur sukses në jetë dhe për të arritur kënaqësi, por duhet të mësoni dhe kuptoni shprehitë e të menduarit dhe të sjelljes në mënyrë që të arrini aty ku dëshironi.</p>
+            <button onclick="window.location.href=' {{ url_for('view_pdf', book_name='magjia-e-menduarit.pdf') }}'" class="btn btn-light">ALB</button>
+            <button onclick="window.location.href=' {{ url_for('view_pdf', book_name='TheMagicofThinkingBig-en.pdf') }}'" class="btn btn-light">ENG</button>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='darka-e-gabuar.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Darka e Gabuar</h2>
+              <p>Darka e gabuar është roman i shkrimtarit të mirënjohur shqiptar Ismail Kadare. Është shkruar mes Malit të Robit (Durrës), Luganos së Zvicrës dhe Parisit gjatë verës dhe dimrit 2007-2008. Një darkë krejtësisht e pazakontë, me një mister , është subjekti i romanit të Kadaresë. Ndonëse i bazuar mbi një ngjarje të vërtetë, që ka trazuar vite më parë një qytet të tërë, dhe ndonëse i hetuar për një kohë tepër të gjatë, herë haptas e më së shumti, në fshehtësi, e vërteta e darkës ka mbetur ende sot e pashpjeguar plotësisht.</p>
+              <button onclick="window.location.href=' {{ url_for('view_pdf', book_name='darka-e-gabuar.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='Othello.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Otello</h2>
+              <p>Otelloja një arap i Mauritanisë dhe gjeneral i Republikës së Venedikut, bie në dashuri me Desdemonën , të bijën e senatorit Brabant të kësaj Republike , e rrëmben dhe martohet fshehurazi . Jagoja , nënoficer i Otellos,i fut idenë që e shoqja e turpëron me një oficer të tij të quajtur Kasi dhe ia mbush aq mirë koken , sa Otelloja e mbyt në shtrat të shoqen e tij dhe pastaj vret dhe veten , kur e merr vesh që e shoqja qe fare e pafajshme . Rolet e para të kësaj tragjedie i luajnë Otelloja , Desdemona dhe Jagoja.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='otello.pdf') }}'" class="btn btn-light">ALB</button>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='Othello-en.pdf') }}'" class="btn btn-light">ENG</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='dashuri-ne-moshen-e-krishtit.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Dashuri në moshën e Krishtit</h2>
+              <p>Botimi më i ri i Shtëpisë Botuese Dritëro, në duart e lexuesit: “Dashuri në moshën e Krishtit”, i cili sjell një anëtë panjohur të shkrimtarit: Një libër që drithëron me drithërimat e një dashurie të jashtëzakonshme: Vajza shkodrane, e bukur, tekanjoze, plot ëndrra, ngjiz një dashuri të lakmueshme për shumëkënd me shkrimtarin e madh, me pasion të çmendur, me një shpirt si të rrallët e kësaj bote, me një kod ndjenje të deshifrueshëm vetëm nga ata të dy.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='dashuri-ne-moshen-e-krishtit.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='EPenguara.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">E Penguara</h2>
+              <p>"E penguara - Requiem për Linda B". Roman me Autor Ismail Kadare. Shtëpia botuese Onufri. Botuar në nëntor 2009. Ky libër, afron me një roman, ku, veç të tjerash, flitet për nostalgjinë e Tiranës. "Kafe Flora", kryqëzimet e rrugëve rreth sheshit Skënderbe", kopshtet e Akademisë, në ish-pallatin mbretëror, gjethet e rëna parkun përballë hotel "Dajtit". Kjo nostalgji epokash të përziera për kryeqytetin e vendit, merr një ngjyrim të skajshëm dramatik kur jepet nëpërmjet vizionit të një vajze që e ka të ndaluar të shkelë në kryeqytet. Kjo është "e penguara", vajza tetëmbëdhjetë vjeçare, e cila, ashtu si personazhet antike që ngrihen kundër fatit, përpiqet të kapërcejë pengesën e shtetit. Fundi i saj, është tepër tragjik, përfundon me vetëvrasje.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='e_penguara.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='Eugene-Onegin.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Eurgjen Onjegin</h2>
+              <p>Eugjen Onjegini (rus: Евгений Онегин) është një roman në vargje i shkruar nga Aleksandër Pushkini. Bën pjesë në letërsisë klasike ruse, dhe protagonist i saj kryesor ka shërbyer si model për një numër heronjsh të letërsisë ruse. U botua në formë serish mes viteve 1825 dhe 1832. Edicioni i parë i plotë u botua në 1833, ndërsa versioni që pranohet e lexohet edhe sot u bazua në botimin e vitit 1837.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='eugjen-oegini.pdf') }}'" class="btn btn-light">ALB</button>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='Eugene-Onegin-en.pdf') }}'" class="btn btn-light">ENG</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='Hamleti.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Hamleti</h2>
+              <p>Babai i Hamletit mbytet nga vëllai i tij Klaud për të marrë në dorë pushtetin mbretëror. Pasi merr pushtetin në dorë ai po ashtu martohet me nënën e princit Hamlet, Gertruden. Mbreti Klaud i bind të gjithë se kjo ishte një vdekje natyrore, por pasi fantazma e babait të Hamletit e lajmëron se kjo nuk ishte një vdekje natyrore, por mbreti Klaud e kishte mbytur atë me helm.Pas disa kohësh në qytet vijne disa aktor të huaj ku Hamleti i thotë të luajnë një ngjarje si ajo që i kishte ndodhur të atit. Pas kësaj ngjarjeje Hamleti vërtëtohet për vdekjen jo natyrale të babait. Ai kishte të dashur Ofelinë,bijën e Pollonit dhe motra e Laertit. Ai fillon të sillet si i marrë për të gjetur një mënyrë sa më të mirë se si ti hakmerret Mbretit. Gjatë këtij roli ai vret edhe babain e Ofelisë, Pollonin. Pas kësaj ngjarjeje Ofelia ishte shumë e tronditur dhe një ditë mbytet në lumë. Kur i vëllau merr vesh për vdekjen e babait dhe të motrës së tij i vërsulet mbretit.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='hamleti.pdf') }}'" class="btn btn-light">ALB</button>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='Hamlet-en.pdf') }}'" class="btn btn-light">ENG</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='odisea.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Odiseja</h2>
+              <p>Odiseja është një nga dy poemat epike greke të lashtë të atribuara Homerit. Është pjesërisht një vazhdim i Iliadës, vepra tjetër që i atribuohet Homerit. Odiseja është thelbësore për kanunin modern perëndimor; është vepra e dytë më e vjetër e letërsisë perëndimore, ndërsa Iliada është më e vjetra. Dijetarët besojnë se Odiseja ishte e përbërë afër fundit të shekullit VIII p.e.s., diku në Jonia, rajoni bregdetar grek i Anadollit.[1] Eshte shume e lashte nuk ka informacione 100% te sakta.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='homeri-odisea.pdf') }}'" class="btn btn-light">ALB</button>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='odyssey-en.pdf') }}'" class="btn btn-light">ENG</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='ikigai.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Ikigai</h2>
+              <p>IKIGAI SEKRETET JAPONEZE PER NJE JETE TE GJATE DHE TE LUMTUR</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='ikigai.pdf') }}'" class="btn btn-light">ALB</button>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='Ikigai-en.pdf') }}'" class="btn btn-light">ENG</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='inteligjenca-emocionale-20.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Inteligjenca Emocionale</h2>
+              <p>Inteligjenca Emocionale: Pse mund të ketë rëndësi më shumë se IQ-ja (Anglisht: Emotional Intelligence: Why It Can Matter More Than IQ) është libër i vitit 1995 nga psikologu amerikan Daniel Goleman. Në këtë libër, Goleman përmend se inteligjenca emocionale është po aq e rëndësishme sa IQ-ja. Autori na tërheq vëmendjen se këndvështrimi ynë për inteligjencën njerëzore është shumë i ngushtë. Arsyeja është se ne injorojmë një sërë aftësish që kanë ndikim shumë të madh në ecurinë e jetës sonë.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='inteligjenca-emocionale.pdf') }}'" class="btn btn-light">ALB</button>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='emotional-intelligence-en.pdf') }}'" class="btn btn-light">ENG</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='keshtjella.png')}}" width="200px">
+              <h2 style="margin-top: 20px;">Kështjella</h2>
+              <p>Kështjella është një roman i shkrimtarit shqiptar me famë mbarëbotërore Ismail Kadaresë, e botuar fillimisht më 1970 në Tiranë.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='keshtjella.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='kenget-e-milosaos.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Këngët e Milosaos</h2>
+              <p>Jeronim de Rada është romantiku ynë i parë, i cili pa se letërsia popullore e përdorur në vepra luan një rol të rëndësishëm në pasurimin e tyre. Ai, siç dihet, u mor edhe me mbledhjen e folklorit në viset e ndryshme ku jetonin arbëreshët, në radhë të parë, në viset e Kalabrisë, sidomos të fshatit të tij të lindjes, Makit. Pas mbledhjes së krijimtarisë gojore arbëreshe, De Rada botoi edhe vepra origjinale me vlera të mëdha artistike, siç janë Këngët e Milosaos (1836), Një pasqyrë e jetës njerëzore (1898) dhe Skënderbeu i pafan (1872-1884).</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='kenget-e-milosaos.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='fuqia-e-mendimeve.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Fuqia E Mendimeve</h2>
+              <p>Po sikur të mund ta ndryshonit jetën tuaj, sikur të kishit fuqinë dhe të bëheshit sundimtari i mbretërisë suaj? Unë mendoj se kjo është e mundur! Libri “Fuqia e mendimeve” është një histori e vërtetë që tregon se si unë përdora mendimet pozitive për të ndryshuar jetën time. Kur diagnostikohesh me një sëmundje të pashërueshme, kupton se shumica e kokëçarjeve të përditshme nuk janë aspak të rëndësishme. Gjithçka fashitet kur kupton se jeta është dhurata më e çmuar.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='fuqia-e-mendimit.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename="alkimisti.jpg")}}" width="200px">
+              <h2 style="margin-top: 20px;">Alkimisti</h2>
+              <p>Ky është një nga romanet më të suksesshme të Paolo Coelhos dhe një prej librave më të shitur në botë përgjatë këtij shekulli. Briliant në rrëfim, magjik dhe i thjeshtë në mënyrën sesi komunikon me lexuesin. Është një gjetje fantastike për dhurata për të dashurit apo miqt tuaj. Alkimisti nuk duhet humbur kurrësesi.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='alkimisti.pdf') }}'" class="btn btn-light">ALB</button>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='The_Alchemist-en.pdf') }}'" class="btn btn-light">ENG</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='romeo-dhe-xhuliet.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Romeo dhe Zhulieta</h2>
+              <p>Romeo e Zhuljeta (titulli i shkurtër anglisht Romeo and Juliet) është një tragjedi e publikuar në vitin 1597 nga Uiliam Shekspir. Ajo tregon historinë e dy të dashuruarëve, fiset e të cilëve janë armiq. Drama që mbaron me vetëvrasjen e Romeos dhe Zhuljetës është një nga veprat më të njohura të William Shakespeare-it dhe një nga historitë dashurie më të famshme të letërsisë botërore.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='romeo-dhe-xhuliela.pdf') }}'" class="btn btn-light">ALB</button>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='romeo-and-juliet-en.pdf') }}'" class="btn btn-light">ENG</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename='cajld-harold.jpg')}}" width="200px">
+              <h2 style="margin-top: 20px;">Çajld Harold</h2>
+              <p>Çajld Harold është një poemë liriko-epike e Bajronit, e cila shënoi arratisjen e madhe romantike, falë mjeshtrisë së rrëfimit përmes ditarit nga autori, Xhorxh Bajroni. Kjo vepër është kthyer në modelin e gjithë letërsisë romantike europiane të shekullit të XIX.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='shtegtimet-e-haroldit.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename="Sikur_t'isha_djale.jpg")}}" width="200px">
+              <h2 style="margin-top: 20px;">Sikur t'isha djalë</h2>
+              <p>Sikur t'isha djalë është një roman epistolar në gjuhën shqipe i shkruar nga Haki Stërmilli dhe i botuar për herë të parë më 1936. I shkruar kryesisht si hyrje ditari, dokumenton sprovat e Dijes, të resë protagoniste, për t'u përshtatur me shoqërinë patriarkale shqiptare.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='sikur-te-isha-djal.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename="trendafili-ne-gote.jpg")}}" width="200px">
+              <h2 style="margin-top: 20px;">Trëndafili Në Gotë</h2>
+              <p>Dritëro Agolli i ka lenë një pasuri të jashtëzakonshme letërsisë shqiptare me veprat e tij. Romani i tij “Trëndafili në gotë”, është një nga romanet e tij që vështirë harrohen.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='trendafili-ne-got.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+            <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+              <img src="{{url_for('static', filename="bageti-e-bujqesi.jpg")}}" width="200px">
+              <h2 style="margin-top: 20px;">Bageti e Bujqësi</h2>
+              <p>Lirika zë vendin kryesor në krijimtarinë e Naimit, sadoqë poema epike "Historia e Skënderbeut" është një nga veprat e tij më të rëndësishme. Por edhe këtu, pjesët më të qëlluara janë ato lirike.</p>
+              <button onclick="window.location.href='{{ url_for('view_pdf', book_name='bageti-e-bujqesi.pdf') }}'" class="btn btn-light">ALB</button>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+          <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+            <img src="{{url_for('static', filename='Emira.jpg')}}" width="200px">
+            <h2 style="margin-top: 20px;">Emira</h2>
+            <p>"Emira" e Anton Santorit është drama e parë në gjuhën shqipe. Aty trajtohet gjerësisht dukuria shoqërore e cubërisë, që Santori e kishte prekur edhe te novelat e romanet. Ngjarjet zhvillohen në fshatin arbëresh Shën Katerinë të Italisë. Subjekti me pak fjalë është ky: dy vajza fshatare, Emira dhe Kalina, dashurojnë të njëjtin djalë, Mirianin, të cilit i rrah zemra për të parën, po këtë e lakmon edhe bariu i derrave të fshatit, Kallonjeri, njeri pa skrupull, që i vjen rrotull edhe Kalinës.</p>
+            <button onclick="window.location.href='{{ url_for('view_pdf', book_name='emira.pdf') }}'" class="btn btn-light">ALB</button>
+          </div>
+          <div class="col" style="margin-bottom: 50px; margin-top: 50px;">
+            <img src="{{url_for('static', filename='historia-e-skenderbeut.jpg')}}" width="200px">
+            <h2 style="margin-top: 20px;">Historia e Skenderbeut</h2>
+            <p></p>
+            <button onclick="window.location.href='{{ url_for('view_pdf', book_name='historia-e-skenderbeut.pdf') }}'" class="btn btn-light">ALB</button>
+          </div>
+      </div>
+        
+    </div>
+
+
+    <hr>
+
+    <div id="bottom">
+        <button onclick="window.location.href='https://www.facebook.com/krijimtar'" id="facebook"><img src="{{url_for('static', filename='facebook.png')}}" id="facebook-logo" width="40px"></button>
+        <button onclick="window.location.href='https://www.instagram.com/krijimtar'" id="instagram"><img src="{{url_for('static', filename='instagram.png')}}" width="40px"></button>
+        <button onclick="window.location.href='https://www.tiktok.com/@krijimtar'" id="tiktok"><img src="{{url_for('static', filename='tiktok.png')}}" width="40px"></button>
+        <button onclick="window.location.href='https://www.linkedin.com/company/krijimtar/'" id="linkedin"><img src="{{url_for('static', filename='linkedin.png')}}" width="40px"></button>
+        <p style="margin-top: 10px;">krijimtar@gmail.com</p>
+        <p>© 2024 Andi Osmani. All Rights Reserved</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
